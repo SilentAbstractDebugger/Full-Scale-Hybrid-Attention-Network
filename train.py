@@ -70,7 +70,7 @@ class CSVLogger:
 def parse_args():
     p = argparse.ArgumentParser(description="Train U-Net or FSHA-Net on DRIVE")
     p.add_argument("--model",       default="fshanet", choices=["unet", "fshanet"])
-    p.add_argument("--data_root",   default="D:/pillai/DRIVE")
+    p.add_argument("--data_root",   default="./dataset/DRIVE")
     p.add_argument("--img_size",    type=int,   default=256)
     p.add_argument("--batch_size",  type=int,   default=2)
     p.add_argument("--epochs",      type=int,   default=50)
@@ -195,7 +195,7 @@ def train(args):
         model.parameters(), lr=args.lr, weight_decay=1e-5)
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode="max", factor=0.5, patience=7, verbose=False)
+        optimizer, mode="max", factor=0.5, patience=7)
 
     best_dice  = 0.0
     no_improve = 0
