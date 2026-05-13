@@ -4,6 +4,4 @@ __pycache__/
 *.ckpt
 *.zip
 *.mp4
-*.png
-*.jpg
 .vscode/
