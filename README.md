@@ -6,21 +6,12 @@
 pip install torch torchvision albumentations numpy Pillow scipy
 ```
 
-### Data Layout
-```
-D:/pillai/DRIVE/
-    training/
-        images/  ← *.tif   (e.g. 21_training.tif)
-        mask/    ← *.gif   (e.g. 21_training.gif)
-    test/
-        images/  ← *.tif
-        mask/    ← *.gif
-```
+
 
 ### Train
 ```bash
-python train.py --model unet    --epochs 50 --batch_size 4
-python train.py --model fshanet --epochs 50 --batch_size 4
+python train.py --model unet    --epochs 50 --batch_size 2
+python train.py --model fshanet --epochs 50 --batch_size 2
 ```
 
 ### Evaluate
